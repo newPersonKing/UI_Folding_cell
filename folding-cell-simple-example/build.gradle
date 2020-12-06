@@ -1,0 +1,31 @@
+apply plugin: 'com.android.application'
+
+version = '1.2.1'
+
+android {
+    compileSdkVersion 29
+    defaultConfig {
+        applicationId "com.ramotion.foldingcell.examples.simple"
+        minSdkVersion 14
+        targetSdkVersion 29
+        versionCode 3
+        versionName version
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':folding-cell')
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+
+    testImplementation 'junit:junit:4.12'
+}
